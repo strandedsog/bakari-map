@@ -9,7 +9,46 @@
 			}
 
 			function display_ct() {
-				var x = new Date()
+				var x = new Date();
+
+				// MOUNTAIN
+				if (x.getHours() >= 8 && x.getHours() <= 12) {
+				   document.getElementById("bmount").disabled = false;
+				} else {
+					document.getElementById("mtlink").disabled = true;
+				    document.getElementById("bmount").disabled = true;
+				    document.getElementById("schedmount").innerText =  "\n Be back here between 8 AM and 12 NN";
+				}
+
+				// SWAMP
+				if (x.getHours() >= 13 && x.getHours() <= 18) {
+				   document.getElementById("bswamp").disabled = false;
+				} else {
+					document.getElementById("swamplink").disabled = true;
+				    document.getElementById("bswamp").disabled = true;
+				    document.getElementById("schedswamp").innerText = "\n Be back here between 1 PM and 6 PM";
+				}
+
+				// BUSHY FOREST
+				if (x.getHours() >= 6 && x.getHours() <= 10) {
+				   document.getElementById("bbushyf").disabled = false;
+				} else {
+					document.getElementById("bushylink").disabled = true;
+				    document.getElementById("bbushyf").disabled = true;
+				    document.getElementById("schedbushy").innerText = "\n Be back here between 6 AM and 10 AM";
+				}
+
+				// BUSHY FOREST
+				if ((x.getHours() >= 23) || (x.getHours() >= 0 && x.getHours() <= 3)) {
+				   document.getElementById("bforest").disabled = false;
+				} else {
+					var text = "";
+					text = "Be back here between 6 AM and 10 AM";
+					document.getElementById("forestlink").disabled = true;
+				    document.getElementById("bforest").disabled = true;
+				    document.getElementById("schedforest").innerText = "\n" + text;
+				}
+
 				const oneDay = 24 * 60 * 60 * 1000;
 
 				var month = new Array();
@@ -34,7 +73,7 @@
 				var y = new Date ("2020-10-10");
 				var diffDays = Math.round(Math.abs((y - x) / oneDay));
 				if (x < y){
-					document.getElementById('ct2').innerHTML = diffDays + " DAYS BEFORE MAROONING";
+					document.getElementById('ct2').innerHTML = (diffDays + 1) + " DAYS BEFORE MAROONING";
 					display_c();
 				}else{
 					diffDays = Math.round(Math.abs((x - y) / oneDay));
@@ -42,7 +81,35 @@
 					display_c();
 				}
 
+				// CONVERT HOURS
+				var h = 0;
+				var d;
+
+				if (x.getHours() == 0){
+					if (x.getMinutes() == 0){
+						d = "MN";
+					}else{
+						d = "AM"
+					}
+					h = 12;
+				}else if (x.getHours() > 12){
+					h = x.getHours() - 12;
+					d = "PM";
+				}else if (x.getHours() == 12){
+					if (x.getMinutes() == 0){
+						d = "NN";
+					}else{
+						d = "PM"
+					}
+				}else{
+					d = "AM";
+				}
+
+				document.getElementById("ctime").innerHTML = (h<10?'0':'') + h + ":" + (x.getMinutes()<10?'0':'') + x.getMinutes() + " " + d;
+
+				display_c();
 			}
+
 		</script>
 		<link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" rel="stylesheet"/>
 		<style type="text/css">
@@ -80,9 +147,15 @@
 		  border: 2px solid blue
 		}
 
-		.button1:hover {
+		.button1:hover:enabled {
 		  background-color: blue;
 		  color: white;
+		}
+
+		.button1:disabled {
+		  background-color: gray; 
+		  color: white; 
+		  border: 2px solid gray
 		}
 		/* Create two equal columns that floats next to each other */
 		.column1 {
@@ -93,7 +166,7 @@
 		.column2 {
 			font-family: Roboto;
 		  	float: left;
-		  	width: 15%;
+		  	width: 17%;
 		  	padding: 5px;
 		}
 		.column3 {
@@ -125,15 +198,36 @@
 		    	<img onclick="showCoords(event)" src="BAKARI CAMP.jpg" usemap="#worldmap" style="width: 100%">
 		  	</div>
 		  	<div class="column2">
-		    	<a href="SwanseaCampLife_2.html"><button class="button button1" style="width: 250px">CAMP</button></a><br>
-				<a href="SwanseaMountain_2.html"><button class="button button1" style="width: 250px">MOUNTAIN</button></a><br>
-				<a href="SwanseaForest1_2.html"><button class="button button1" style="width: 250px">BUSHY FOREST</button></a><br>
-				<a href="SwanseaForest2_2.html"><button class="button button1" style="width: 250px">FOREST</button></a><br>
-				<a href="SwanseaCoconut_2.html"><button class="button button1" style="width: 250px">SWAMP</button></a><br>
-				<a href="SwanseaShore1_2.html"><button class="button button1" style="width: 250px">WATERWELL</button></a><br>
+		    	<a href="BCAMP.html"><button class="button button1" style="width: 250px" id="bcamp">CAMP</button></a><br>
+				<a href="BMOUNTAIN.html" id="mtlink">
+					<button class="button button1" style="width: 250px" id="bmount">
+						MOUNTAIN
+						<i><span id="schedmount" style="font-size: 10px"></span></i></br>
+					</button>
+				</a><br>
+				<a href="BBUSHY_FOREST.html" id="bushylink">
+					<button class="button button1" style="width: 250px" id="bbushyf">
+						BUSHY FOREST
+						<i><span id="schedbushy" style="font-size: 10px"></span></i></br>
+					</button>
+				</a><br>
+				<a href="BFOREST.html" id="forestlink">
+					<button class="button button1" style="width: 250px" id="bforest">
+						FOREST
+						<i><span id="schedforest" style="font-size: 10px"></span></i></br>
+					</button>
+				</a><br>
+				<a href="BSWAMP.html" id="swamplink">
+					<button class="button button1" style="width: 250px" id="bswamp">
+						SWAMP
+						<i><span id="schedswamp" style="font-size: 10px"></span></i></br>
+					</button>
+				</a><br>
+				<a href="BWATERWELL.html"><button class="button button1" style="width: 250px" id="bwaterwell">WATERWELL</button></a><br>
 		  	</div>
-		  	<div class="column3" style="border: 5px solid black; height: 50%; margin-top: 10px">
+		  	<div class="column3" style="border: 5px solid black; height: 70%; margin-top: 10px">
 		    	<center><h1><span id='ct' ></span></h1>
+		    	<center><h1><span id='ctime'></span></h1>
 		    	<h3><span id='ct2' ></span></h3></center>
 		  	</div>
 		</div>
