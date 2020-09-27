@@ -17,6 +17,7 @@
 				} else {
 					document.getElementById("mtlink").disabled = true;
 				    document.getElementById("bmount").disabled = true;
+				    document.getElementById("schedmount").disabled = true;
 				    document.getElementById("schedmount").innerText =  "\n Be back here between 8 AM and 12 NN";
 				}
 
@@ -24,9 +25,10 @@
 				if (x.getHours() >= 13 && x.getHours() <= 18) {
 				   document.getElementById("bswamp").disabled = false;
 				} else {
-					document.getElementById("swamplink").disabled = true;
-				    document.getElementById("bswamp").disabled = true;
 				    document.getElementById("schedswamp").innerText = "\n Be back here between 1 PM and 6 PM";
+				    document.getElementById("swamplink").disabled = true;
+				    document.getElementById("bswamp").disabled = true;
+				    document.getElementById("schedswamp").disabled = true;
 				}
 
 				// BUSHY FOREST
@@ -35,6 +37,7 @@
 				} else {
 					document.getElementById("bushylink").disabled = true;
 				    document.getElementById("bbushyf").disabled = true;
+				    document.getElementById("schedbushy").disabled = true;
 				    document.getElementById("schedbushy").innerText = "\n Be back here between 6 AM and 10 AM";
 				}
 
@@ -46,6 +49,7 @@
 					text = "Be back here between 6 AM and 10 AM";
 					document.getElementById("forestlink").disabled = true;
 				    document.getElementById("bforest").disabled = true;
+				    document.getElementById("schedforest").disabled = true;
 				    document.getElementById("schedforest").innerText = "\n" + text;
 				}
 
@@ -175,7 +179,10 @@
 		  	width: 25%;
 		  	padding: 5px;
 		}
-
+		span:disabled {
+  			pointer-events: none;
+			cursor: default;
+		}
 		/* Clearfix (clear floats) */
 		.row::after {
 		  	content: "";
@@ -220,7 +227,7 @@
 				<a href="BSWAMP.html" id="swamplink">
 					<button class="button button1" style="width: 250px" id="bswamp">
 						SWAMP
-						<i><span id="schedswamp" style="font-size: 10px"></span></i></br>
+						<i><span id="schedswamp" style="font-size: 10px"></span></i>
 					</button>
 				</a><br>
 				<a href="BWATERWELL.html"><button class="button button1" style="width: 250px" id="bwaterwell">WATERWELL</button></a><br>
