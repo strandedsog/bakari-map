@@ -105,8 +105,10 @@
 					}else{
 						d = "PM"
 					}
+					h = 12;
 				}else{
 					d = "AM";
+					h = x.getHours();
 				}
 
 				document.getElementById("ctime").innerHTML = (h<10?'0':'') + h + ":" + (x.getMinutes()<10?'0':'') + x.getMinutes() + " " + d;
