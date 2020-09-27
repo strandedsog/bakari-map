@@ -13,7 +13,10 @@
 
 				// MOUNTAIN
 				if (x.getHours() >= 8 && x.getHours() <= 12) {
-				   document.getElementById("bmount").disabled = false;
+				   	document.getElementById("mtlink").disabled = false;
+				   	document.getElementById("bmount").disabled = false;
+				    document.getElementById("schedmount").disabled = false;
+				    document.getElementById("schedmount").innerText =  "";
 				} else {
 					document.getElementById("mtlink").disabled = true;
 				    document.getElementById("bmount").disabled = true;
@@ -23,7 +26,10 @@
 
 				// SWAMP
 				if (x.getHours() >= 13 && x.getHours() <= 18) {
-				   document.getElementById("bswamp").disabled = false;
+				   	document.getElementById("schedswamp").innerText = "";
+				    document.getElementById("swamplink").disabled = false;
+				    document.getElementById("bswamp").disabled = false;
+				    document.getElementById("schedswamp").disabled = false;
 				} else {
 				    document.getElementById("schedswamp").innerText = "\n Be back here between 1 PM and 6 PM";
 				    document.getElementById("swamplink").disabled = true;
@@ -33,7 +39,10 @@
 
 				// BUSHY FOREST
 				if (x.getHours() >= 6 && x.getHours() <= 10) {
-				   document.getElementById("bbushyf").disabled = false;
+				   document.getElementById("bushylink").disabled = false;
+				    document.getElementById("bbushyf").disabled = false;
+				    document.getElementById("schedbushy").disabled = false;
+				    document.getElementById("schedbushy").innerText = "";
 				} else {
 					document.getElementById("bushylink").disabled = true;
 				    document.getElementById("bbushyf").disabled = true;
@@ -43,7 +52,11 @@
 
 				// BUSHY FOREST
 				if ((x.getHours() >= 23) || (x.getHours() >= 0 && x.getHours() <= 3)) {
-				   document.getElementById("bforest").disabled = false;
+				   	text = "";
+					document.getElementById("forestlink").disabled = false;
+				    document.getElementById("bforest").disabled = false;
+				    document.getElementById("schedforest").disabled = false;
+				    document.getElementById("schedforest").innerText = "\n" + text;
 				} else {
 					var text = "";
 					text = "Be back here between 6 AM and 10 AM";
