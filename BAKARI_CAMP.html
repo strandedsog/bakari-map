@@ -10,57 +10,51 @@
 
 			function display_ct() {
 				var x = new Date();
-
+				var n = new Date();
 				// MOUNTAIN
-				if (x.getHours() >= 8 && x.getHours() <= 12) {
-				   	document.getElementById("mtlink").disabled = false;
+				if (x.getHours() >= 8 && ( x.getHours() <= 11 && x.getMinutes <= 59 )) {
+				   	// document.getElementById("mtlink").disabled = false;
 				   	document.getElementById("bmount").disabled = false;
 				    document.getElementById("schedmount").disabled = false;
 				    document.getElementById("schedmount").innerText =  "";
 				} else {
-					document.getElementById("mtlink").disabled = true;
+					// document.getElementById("mtlink").disabled = true;
 				    document.getElementById("bmount").disabled = true;
 				    document.getElementById("schedmount").disabled = true;
 				    document.getElementById("schedmount").innerText =  "\n Be back here between 8 AM and 12 NN";
 				}
 
 				// SWAMP
-				if (x.getHours() >= 13 && x.getHours() <= 18) {
+				if (x.getHours() >= 13 && ( x.getHours() <= 17 && x.getMinutes() <= 59)) {
 				   	document.getElementById("schedswamp").innerText = "";
-				    document.getElementById("swamplink").disabled = false;
 				    document.getElementById("bswamp").disabled = false;
 				    document.getElementById("schedswamp").disabled = false;
 				} else {
 				    document.getElementById("schedswamp").innerText = "\n Be back here between 1 PM and 6 PM";
-				    document.getElementById("swamplink").disabled = true;
 				    document.getElementById("bswamp").disabled = true;
 				    document.getElementById("schedswamp").disabled = true;
 				}
 
 				// BUSHY FOREST
-				if (x.getHours() >= 6 && x.getHours() <= 10) {
-				   document.getElementById("bushylink").disabled = false;
+				if (x.getHours() >= 6 && ( x.getHours() <= 9 && x.getMinutes() <= 59)) {
 				    document.getElementById("bbushyf").disabled = false;
 				    document.getElementById("schedbushy").disabled = false;
 				    document.getElementById("schedbushy").innerText = "";
 				} else {
-					document.getElementById("bushylink").disabled = true;
 				    document.getElementById("bbushyf").disabled = true;
 				    document.getElementById("schedbushy").disabled = true;
 				    document.getElementById("schedbushy").innerText = "\n Be back here between 6 AM and 10 AM";
 				}
 
-				// BUSHY FOREST
-				if ((x.getHours() >= 23) || (x.getHours() >= 0 && x.getHours() <= 3)) {
+				// FOREST
+				if (x.getHours() >= 23 || (x.getHours() >= 0 && ( x.getHours() <= 2 && x.getMinutes() <= 59))){
 				   	text = "";
-					document.getElementById("forestlink").disabled = false;
 				    document.getElementById("bforest").disabled = false;
 				    document.getElementById("schedforest").disabled = false;
 				    document.getElementById("schedforest").innerText = text;
 				} else {
 					var text = "";
-					text = "Be back here between 6 AM and 10 AM";
-					document.getElementById("forestlink").disabled = true;
+					text = "Be back here between 11 PM and 3 AM";
 				    document.getElementById("bforest").disabled = true;
 				    document.getElementById("schedforest").disabled = true;
 				    document.getElementById("schedforest").innerText = "\n" + text;
@@ -209,7 +203,10 @@
 		}
 		body {
 			overflow: hidden;
-		}				
+		}	
+		a span#schedmount{
+
+		}		
 		</style>
 	</head>
 	<body oncontextmenu="return false" onkeydown="return false;" onmousedown="return false;" onload="display_ct()">
@@ -220,33 +217,48 @@
 		    	<img onclick="showCoords(event)" src="BAKARI CAMP.jpg" usemap="#worldmap" style="width: 100%">
 		  	</div>
 		  	<div class="column2">
-		    	<a href="BCAMP.html"><button class="button button1" style="width: 250px" id="bcamp">CAMP</button></a><br>
-				<a href="BMOUNTAIN.html" id="mtlink">
-					<button class="button button1" style="width: 250px" id="bmount">
-						MOUNTAIN
-						<i><span id="schedmount" style="font-size: 10px"></span></i></br>
-					</button>
-				</a><br>
-				<a href="BBUSHY_FOREST.html" id="bushylink">
-					<button class="button button1" style="width: 250px" id="bbushyf">
-						BUSHY FOREST
-						<i><span id="schedbushy" style="font-size: 10px"></span></i></br>
-					</button>
-				</a><br>
-				<a href="BFOREST.html" id="forestlink">
-					<button class="button button1" style="width: 250px" id="bforest">
-						FOREST
-						<i><span id="schedforest" style="font-size: 10px"></span></i></br>
-					</button>
-				</a><br>
-				<a href="BSWAMP.html" id="swamplink">
-					<button class="button button1" style="width: 250px" id="bswamp">
-						SWAMP
-						<i><span id="schedswamp" style="font-size: 10px"></span></i>
-					</button>
-				</a><br>
-				<a href="BWATERWELL.html"><button class="button button1" style="width: 250px" id="bwaterwell">WATERWELL</button></a><br>
+
+		    	
+	    		<button type="submit" onclick="location.href='BCAMP.HTML';" class="button button1" style="width: 250px" id="bcamp">
+	    			CAMP
+	    		</button>
+		    	<br>
+
+
+				<button type="submit" onclick="location.href='BMOUNTAIN.HTML';" class="button button1" style="width: 250px" id="bmount">
+					MOUNTAIN
+					<i><span id="schedmount" style="font-size: 10px"></span></i></br>
+				</button>
+				<br>
+
+				
+				<button type="submit" onclick="location.href='BBUSHY.HTML';" class="button button1" style="width: 250px" id="bbushyf">
+					BUSHY FOREST
+					<i><span id="schedbushy" style="font-size: 10px"></span></i></br>
+				</button>
+				<br>
+
+			
+				<button type="submit" onclick="location.href='BFOREST.HTML';" class="button button1" style="width: 250px" id="bforest">
+					FOREST
+					<i><span id="schedforest" style="font-size: 10px"></span></i></br>
+				</button>
+				<br>
+
+				
+				<button type="submit" onclick="location.href='BSWAMP.HTML';" class="button button1" style="width: 250px" id="bswamp">
+					SWAMP
+					<i><span id="schedswamp" style="font-size: 10px"></span></i>
+				</button>
+				<br>
+
+				
+				<button type="submit" onclick="location.href='BWATERWELL.HTML';" class="button button1" style="width: 250px" id="bwaterwell">
+					WATERWELL
+				</button>
+				<br>
 		  	</div>
+
 		  	<div class="column3" style="border: 5px solid black; height: 70%; margin-top: 10px">
 		    	<center><h1><span id='ct' ></span></h1>
 		    	<center><h1><span id='ctime'></span></h1>
