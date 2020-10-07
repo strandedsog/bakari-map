@@ -4,8 +4,8 @@
 		<title>BAKARI MAP</title>
 		<script type="text/javascript"> 
 			function display_c(){
-				var refresh=1000; // Refresh rate in milli seconds
-				mytime=setTimeout('display_ct()',refresh)
+				var refresh = 1000; // Refresh rate in milli seconds
+				mytime = setTimeout('display_ct()',refresh)
 			}
 
 			function display_ct() {
@@ -79,12 +79,11 @@
 				var m = month[x.getMonth()];
 
 				document.getElementById('ct').innerHTML = m.toUpperCase() + " " + x.getDate();
-				display_c();
 
 				var y = new Date ("2020-10-10");
 				var diffDays = Math.round(Math.abs((y - x) / oneDay));
 				if (x < y){
-					document.getElementById('ct2').innerHTML = (diffDays + 1) + " DAYS BEFORE MAROONING";
+					document.getElementById('ct2').innerHTML = (diffDays) + " DAYS BEFORE MAROONING";
 					display_c();
 				}else{
 					diffDays = Math.round(Math.abs((x - y) / oneDay));
