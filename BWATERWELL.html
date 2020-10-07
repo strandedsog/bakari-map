@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <HTML>
 	<head>
-		<title>SWAMP | BAKARI CAMP</title>
+		<title>WATER WELL | BAKARI CAMP</title>
 		<script type="text/javascript"> 
 			function display_c(){
 				var refresh = 1000; // Refresh rate in milli seconds
@@ -11,7 +11,6 @@
 			function display_ct() {
 				var x = new Date();
 				var n = new Date();
-
 				// MOUNTAIN
 				if (x.getHours() >= 8 && ( x.getHours() <= 11 && x.getMinutes <= 59 )) {
 				   	// document.getElementById("mtlink").disabled = false;
@@ -31,7 +30,7 @@
 				    document.getElementById("bswamp").disabled = false;
 				    document.getElementById("schedswamp").disabled = false;
 				} else {
-					window.location.href = "https://stranded-bakari-map.herokuapp.com/";
+				    document.getElementById("schedswamp").innerText = "\n Be back here between 1 PM and 6 PM";
 				    document.getElementById("bswamp").disabled = true;
 				    document.getElementById("schedswamp").disabled = true;
 				}
@@ -55,7 +54,7 @@
 				    document.getElementById("schedforest").innerText = text;
 				} else {
 					var text = "";
-					text = "Be back here between 11 PM and 3 AM";
+					window.location.href = "https://stranded-bakari-map.herokuapp.com/"
 				    document.getElementById("bforest").disabled = true;
 				    document.getElementById("schedforest").disabled = true;
 				    document.getElementById("schedforest").innerText = "\n" + text;
@@ -83,14 +82,14 @@
 
 				var y = new Date ("2020-10-10");
 				var diffDays = Math.round(Math.abs((y - x) / oneDay));
-				// if (x < y){
-				// 	document.getElementById('ct2').innerHTML = (diffDays) + " DAYS BEFORE MAROONING";
-				// 	display_c();
-				// }else{
-				// 	diffDays = Math.round(Math.abs((x - y) / oneDay));
-				// 	document.getElementById('ct2').innerHTML = "DAY " + (diffDays);
-				// 	display_c();
-				// }
+				if (x < y){
+					document.getElementById('ct2').innerHTML = (diffDays) + " DAYS BEFORE MAROONING";
+					display_c();
+				}else{
+					diffDays = Math.round(Math.abs((x - y) / oneDay));
+					document.getElementById('ct2').innerHTML = "DAY " + (diffDays);
+					display_c();
+				}
 
 				// CONVERT HOURS
 				var h = 0;
@@ -209,18 +208,18 @@
 		body {
 			overflow: hidden;
 		}	
-		a span#schedmount{
-
-		}		
+		
 		</style>
 	</head>
+	<script type="text/javascript" src="hover.js"></script>
 	<body oncontextmenu="return false" onkeydown="return false;" onmousedown="return false;" onload="display_ct()">
 		
 
 		<div class="row">
 			<div class="column1">
-		    	<img onclick="showCoords(event)" src="SWAMP.jpg" usemap="#worldmap" style="width: 100%">
+		    	<img onclick="showCoords(event)" src="BWATERWELL.jpg" usemap="#worldmap" style="width: 100%">
 		  	</div>
+		  		
 		  	<div class="column2">
 
 		    	
@@ -251,14 +250,14 @@
 				<br>
 
 				
-				<button type="submit" onclick="location.href='BSWAMP.html';" class="button button1 now" style="width: 250px" id="bswamp" disabled="">
+				<button type="submit" onclick="location.href='BSWAMP.html';" class="button button1" style="width: 250px" id="bswamp">
 					SWAMP
 					<i><span id="schedswamp" style="font-size: 10px"></span></i>
 				</button>
 				<br>
 
 				
-				<button type="submit" onclick="location.href='BWATERWELL.html';" class="button button1" style="width: 250px" id="bwaterwell">
+				<button type="submit" onclick="location.href='BWATERWELL.html';" class="button button1 now" style="width: 250px" id="bwaterwell" disabled="">
 					WATERWELL
 				</button>
 				<br>
@@ -283,7 +282,7 @@
 		    }
 		});
 	</script>
-	
+	<script type="text/javascript" src="hover.js"></script>
 	<!-- <script>
 		function loadPWSwansea(){
 			var s1Pass;

@@ -46,19 +46,19 @@
 				    document.getElementById("schedbushy").innerText = "\n Be back here between 6 AM and 10 AM";
 				}
 
-				// // FOREST
-				// if (x.getHours() >= 23 || (x.getHours() >= 0 && ( x.getHours() <= 2 && x.getMinutes() <= 59))){
-				//    	text = "";
-				//     document.getElementById("bforest").disabled = false;
-				//     document.getElementById("schedforest").disabled = false;
-				//     document.getElementById("schedforest").innerText = text;
-				// } else {
-				// 	var text = "";
-				// 	text = "Be back here between 11 PM and 3 AM";
-				//     document.getElementById("bforest").disabled = true;
-				//     document.getElementById("schedforest").disabled = true;
-				//     document.getElementById("schedforest").innerText = "\n" + text;
-				// }
+				// FOREST
+				if (x.getHours() >= 23 || (x.getHours() >= 0 && ( x.getHours() <= 2 && x.getMinutes() <= 59))){
+				   	text = "";
+				    document.getElementById("bforest").disabled = false;
+				    document.getElementById("schedforest").disabled = false;
+				    document.getElementById("schedforest").innerText = text;
+				} else {
+					var text = "";
+					window.location.href = "https://stranded-bakari-map.herokuapp.com/"
+				    document.getElementById("bforest").disabled = true;
+				    document.getElementById("schedforest").disabled = true;
+				    document.getElementById("schedforest").innerText = "\n" + text;
+				}
 
 				const oneDay = 24 * 60 * 60 * 1000;
 
