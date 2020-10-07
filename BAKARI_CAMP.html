@@ -78,16 +78,16 @@
 
 				var m = month[x.getMonth()];
 
-				document.getElementById('ct').innerHTML = m.toUpperCase() + " " + x.getDate();
+				document.getElementById('ct').innerhtml = m.toUpperCase() + " " + x.getDate();
 
 				var y = new Date ("2020-10-10");
 				var diffDays = Math.round(Math.abs((y - x) / oneDay));
 				if (x < y){
-					document.getElementById('ct2').innerHTML = (diffDays) + " DAYS BEFORE MAROONING";
+					document.getElementById('ct2').innerhtml = (diffDays) + " DAYS BEFORE MAROONING";
 					display_c();
 				}else{
 					diffDays = Math.round(Math.abs((x - y) / oneDay));
-					document.getElementById('ct2').innerHTML = "DAY " + (diffDays);
+					document.getElementById('ct2').innerhtml = "DAY " + (diffDays);
 					display_c();
 				}
 
@@ -117,7 +117,7 @@
 					h = x.getHours();
 				}
 
-				document.getElementById("ctime").innerHTML = (h<10?'0':'') + h + ":" + (x.getMinutes()<10?'0':'') + x.getMinutes() + " " + d;
+				document.getElementById("ctime").innerhtml = (h<10?'0':'') + h + ":" + (x.getMinutes()<10?'0':'') + x.getMinutes() + " " + d;
 
 				display_c();
 			}
@@ -156,11 +156,12 @@
 		.button1 {
 		  background-color: white; 
 		  color: black; 
-		  border: 2px solid blue
+		  border: 2px solid brown
 		}
 
 		.button1:hover:enabled {
-		  background-color: blue;
+		  background-color: brown
+		  ;
 		  color: white;
 		}
 
@@ -218,41 +219,41 @@
 		  	<div class="column2">
 
 		    	
-	    		<button type="submit" onclick="location.href='BCAMP.HTML';" class="button button1" style="width: 250px" id="bcamp">
+	    		<button type="submit" onclick="location.href='BCAMP.html';" class="button button1" style="width: 250px" id="bcamp">
 	    			CAMP
 	    		</button>
 		    	<br>
 
 
-				<button type="submit" onclick="location.href='BMOUNTAIN.HTML';" class="button button1" style="width: 250px" id="bmount">
+				<button type="submit" onclick="location.href='BMOUNTAIN.html';" class="button button1" style="width: 250px" id="bmount">
 					MOUNTAIN
 					<i><span id="schedmount" style="font-size: 10px"></span></i></br>
 				</button>
 				<br>
 
 				
-				<button type="submit" onclick="location.href='BBUSHY.HTML';" class="button button1" style="width: 250px" id="bbushyf">
+				<button type="submit" onclick="location.href='BBUSHY.html';" class="button button1" style="width: 250px" id="bbushyf">
 					BUSHY FOREST
 					<i><span id="schedbushy" style="font-size: 10px"></span></i></br>
 				</button>
 				<br>
 
 			
-				<button type="submit" onclick="location.href='BFOREST.HTML';" class="button button1" style="width: 250px" id="bforest">
+				<button type="submit" onclick="location.href='BFOREST.html';" class="button button1" style="width: 250px" id="bforest">
 					FOREST
 					<i><span id="schedforest" style="font-size: 10px"></span></i></br>
 				</button>
 				<br>
 
 				
-				<button type="submit" onclick="location.href='BSWAMP.HTML';" class="button button1" style="width: 250px" id="bswamp">
+				<button type="submit" onclick="location.href='BSWAMP.html';" class="button button1" style="width: 250px" id="bswamp">
 					SWAMP
 					<i><span id="schedswamp" style="font-size: 10px"></span></i>
 				</button>
 				<br>
 
 				
-				<button type="submit" onclick="location.href='BWATERWELL.HTML';" class="button button1" style="width: 250px" id="bwaterwell">
+				<button type="submit" onclick="location.href='BWATERWELL.html';" class="button button1" style="width: 250px" id="bwaterwell">
 					WATERWELL
 				</button>
 				<br>
