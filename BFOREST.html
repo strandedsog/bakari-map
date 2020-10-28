@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <HTML>
 	<head>
-		<title>FOREST | BAKARI CAMP</title>
+		<title>FOREST | UMOJA CAMP</title>
 		<script type="text/javascript"> 
 			function display_c(){
 				var refresh = 1000; // Refresh rate in milli seconds
@@ -12,7 +12,7 @@
 				var x = new Date();
 				var n = new Date();
 				// MOUNTAIN
-				if (x.getHours() >= 8 && ( x.getHours() <= 11 && x.getMinutes() <= 59 )) {
+				if (x.getHours() >= 8 && ( x.getHours() <= 11 && x.getMinutes <= 59 )) {
 				   	// document.getElementById("mtlink").disabled = false;
 				   	document.getElementById("bmount").disabled = false;
 				    document.getElementById("schedmount").disabled = false;
@@ -54,7 +54,7 @@
 				    document.getElementById("schedforest").innerText = text;
 				} else {
 					var text = "";
-					window.location.href = "https://stranded-bakari-map.herokuapp.com/"
+					window.location.href = "https://stranded-umoja-map.herokuapp.com/"
 				    document.getElementById("bforest").disabled = true;
 				    document.getElementById("schedforest").disabled = true;
 				    // document.getElementById("schedforest").innerText = "\n" + text;
@@ -230,7 +230,9 @@
 		<div class="row">
 			<div class="column1">
 		    	<img onclick="showCoords(event)" src="FOREST.jpg" usemap="#worldmap" style="width: 100%">
-		    	
+		    	<map name="worldmap" id="worldmap">
+					<area shape="rect" coords="470.8, 499.8	, 500, 471" class="target" href="#" onclick="on()">
+				</map>
 		  	</div>
 		  	<div id="overlay" onclick="off()" style="padding-top: 20%">
 				<center><img src="folded_pouch.png" style="height: 200px"></center>
@@ -278,7 +280,7 @@
 				<br>
 
 				<button type="submit" onclick="location.href='/';" class="button button1" style="width: 250px" id="home">
-					BAKARI MAP
+					UMOJA MAP
 				</button>
 		  	</div>
 		</div>

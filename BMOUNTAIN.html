@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <HTML>
 	<head>
-		<title>MOUNTAIN | BAKARI CAMP</title>
+		<title>MOUNTAIN | UMOJA CAMP</title>
 		<script type="text/javascript"> 
 			function display_c(){
 				var refresh = 1000; // Refresh rate in milli seconds
@@ -12,14 +12,14 @@
 				var x = new Date();
 				var n = new Date();
 				// MOUNTAIN
-				if (x.getHours() >= 8 && ( x.getHours() <= 11 && x.getMinutes() <= 59 )) {
+				if (x.getHours() >= 8 && ( x.getHours() <= 11 && x.getMinutes <= 59 )) {
 				   	// document.getElementById("mtlink").disabled = false;
 				   	document.getElementById("bmount").disabled = false;
 				    document.getElementById("schedmount").disabled = false;
 				    document.getElementById("schedmount").innerText =  "";
 				} else {
 					// document.getElementById("mtlink").disabled = true;
-					window.location.href = "https://stranded-bakari-map.herokuapp.com/"
+					window.location.href = "https://stranded-umoja-map.herokuapp.com/"
 				    document.getElementById("bmount").disabled = true;
 				    document.getElementById("schedmount").disabled = true;
 				}
@@ -208,7 +208,19 @@
 		body {
 			overflow: hidden;
 		}	
-		
+		#overlay {
+			position: fixed;
+			display: none;
+			width: 100%;
+			height: 100%;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			background-color: rgba(0,0,0,0.7);
+			z-index: 2;
+			cursor: pointer;
+		}	
 		</style>
 	</head>
 	<script type="text/javascript" src="hover.js"></script>
@@ -218,8 +230,13 @@
 		<div class="row">
 			<div class="column1">
 		    	<img onclick="showCoords(event)" src="BMOUNTAIN.jpg" usemap="#worldmap" style="width: 100%">
+		    	<map name="worldmap" id="worldmap">
+					<area shape="rect" coords="900, 75, 902, 77" class="target" href="#" onclick="on()">
+				</map>
 		  	</div>
-		  		
+		  	<div id="overlay" onclick="off()" style="padding-top: 20%">
+				<center><img src="folded_pouch.png" style="height: 200px"></center>
+			</div>	
 		  	<div class="column2">
 
 		    	
@@ -263,7 +280,7 @@
 				<br>
 
 				<button type="submit" onclick="location.href='/';" class="button button1" style="width: 250px" id="home">
-					BAKARI MAP
+					UMOJA MAP
 				</button>
 		  	</div>
 		</div>

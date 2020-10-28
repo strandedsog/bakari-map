@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <HTML>
 	<head>
-		<title>SWAMP | BAKARI CAMP</title>
+		<title>SWAMP | UMOJA CAMP</title>
 		<script type="text/javascript"> 
 			function display_c(){
 				var refresh = 1000; // Refresh rate in milli seconds
@@ -13,7 +13,7 @@
 				var n = new Date();
 
 				// MOUNTAIN
-				if (x.getHours() >= 8 && ( x.getHours() <= 11 && x.getMinutes() <= 59 )) {
+				if (x.getHours() >= 8 && ( x.getHours() <= 11 && x.getMinutes <= 59 )) {
 				   	// document.getElementById("mtlink").disabled = false;
 				   	document.getElementById("bmount").disabled = false;
 				    document.getElementById("schedmount").disabled = false;
@@ -31,7 +31,7 @@
 				    document.getElementById("bswamp").disabled = false;
 				    document.getElementById("schedswamp").disabled = false;
 				} else {
-					window.location.href = "https://stranded-bakari-map.herokuapp.com/";
+					window.location.href = "https://stranded-umoja-map.herokuapp.com/";
 				    document.getElementById("bswamp").disabled = true;
 				    document.getElementById("schedswamp").disabled = true;
 				}
@@ -264,7 +264,7 @@
 				<br>
 
 				<button type="submit" onclick="location.href='/';" class="button button1" style="width: 250px" id="home">
-					BAKARI MAP
+					UMOJA MAP
 				</button>
 		  	</div>
 		</div>

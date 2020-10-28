@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <HTML>
 	<head>
-		<title>CAMP | BAKARI CAMP</title>
+		<title>CAMP | UMOJA CAMP</title>
 		<script type="text/javascript"> 
 			function display_c(){
 				var refresh = 1000; // Refresh rate in milli seconds
@@ -12,7 +12,7 @@
 				var x = new Date();
 				var n = new Date();
 				// MOUNTAIN
-				if (x.getHours() >= 8 && ( x.getHours() <= 11 && x.getMinutes() <= 59 )) {
+				if (x.getHours() >= 8 && ( x.getHours() <= 11 && x.getMinutes <= 59 )) {
 				   	// document.getElementById("mtlink").disabled = false;
 				   	document.getElementById("bmount").disabled = false;
 				    document.getElementById("schedmount").disabled = false;
@@ -210,7 +210,7 @@
 		}	
 		a span#schedmount{
 
-		}
+		}	
 		#overlay {
 			position: fixed;
 			display: none;
@@ -227,17 +227,17 @@
 		</style>
 	</head>
 	<script type="text/javascript" src="hover.js"></script>
-	<body oncontextmenu="return false" onkeydown="return false;" onmousedown="return false;" onload="display_ct()">
+	<body  onload="display_ct()">
 		
 
 		<div class="row">
 			<div class="column1">
 		    	<img onclick="showCoords(event)" src="BCAMP.jpg" usemap="#worldmap" style="width: 100%">
-				<map name="worldmap" id="worldmap">
+		    	<map name="worldmap" id="worldmap">
 					<area shape="rect" coords="510, 517, 515, 521" class="target" href="#" onclick="on()">
 				</map>
 		  	</div>
-			<div id="overlay" onclick="off()" style="padding-top: 20%">
+		  	<div id="overlay" onclick="off()" style="padding-top: 20%">
 				<center><img src="folded_pouch.png" style="height: 200px"></center>
 			</div>	
 		  	<div class="column2">
@@ -283,7 +283,7 @@
 				<br>
 
 				<button type="submit" onclick="location.href='/';" class="button button1" style="width: 250px" id="home">
-					BAKARI MAP
+					UMOJA MAP
 				</button>
 		  	</div>
 		</div>
@@ -302,9 +302,8 @@
 		    }
 		});
 	</script>
-
+		
 	<script type="text/javascript" src="hover.js"></script>
-	
 	<!-- <script>
 		function loadPWSwansea(){
 			var s1Pass;

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>BAKARI MAP</title>
+		<title>UMOJA MAP</title>
 		<script type="text/javascript"> 
 			function display_c(){
 				var refresh = 1000; // Refresh rate in milli seconds
@@ -12,7 +12,7 @@
 				var x = new Date();
 				var n = new Date();
 				// MOUNTAIN
-				if (x.getHours() >= 8 && ( x.getHours() <= 11 && x.getMinutes() <= 59 )) {
+				if (x.getHours() >= 8 && ( x.getHours() <= 11 && x.getMinutes <= 59 )) {
 				   	// document.getElementById("mtlink").disabled = false;
 				   	document.getElementById("bmount").disabled = false;
 				    document.getElementById("schedmount").disabled = false;
@@ -87,7 +87,7 @@
 					display_c();
 				}else{
 					diffDays = Math.round(Math.abs((x - y) / oneDay));
-					document.getElementById('ct2').innerHTML = "DAY " + (diffDays + 1);
+					document.getElementById('ct2').innerHTML = "DAY " + (diffDays);
 					display_c();
 				}
 
@@ -213,10 +213,7 @@
 
 		<div class="row">
 			<div class="column1">
-		    	<img onclick="showCoords(event)" src="BAKARI CAMP.jpg" usemap="#worldmap" style="width: 100%">
-			<map name="worldmap" id="worldmap">
-				<area shape="rect" coords="510.8, 520.8	, 511, 521" class="target" href="#" onclick="on()">
-			</map>
+		    	<img onclick="showCoords(event)" src="UMOJA MAP.jpg" usemap="#worldmap" style="width: 100%">
 		  	</div>
 		  	<div class="column2">
 
